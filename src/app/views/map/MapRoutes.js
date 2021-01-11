@@ -1,9 +1,11 @@
-import React from "react";
+import {lazy} from "react";
+import {authRoles} from "../../auth/authRoles";
 
 const mapRoutes = [
   {
     path: "/map",
-    component: React.lazy(() => import("./AppMap"))
+    component: lazy(() => import("./AppMap")),
+    auth: authRoles.sa
   }
 ];
 

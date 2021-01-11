@@ -1,13 +1,16 @@
-import React from "react";
+import {lazy} from "react";
+import {authRoles} from "../../auth/authRoles";
 
 const formsRoutes = [
   {
     path: "/forms/basic",
-    component: React.lazy(() => import("./BasicForm"))
+    component: lazy(() => import('./BasicForm')),
+    auth:authRoles.guest
   },
   {
     path: "/forms/editor",
-    component: React.lazy(() => import("./EditorForm"))
+    component: lazy(() => import("./EditorForm")),
+    auth:authRoles.admin
   }
 ];
 
